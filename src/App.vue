@@ -1,17 +1,19 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template lang="pug">
+  div(id="app")
+    StepperComponent
+    PaymentPage(msg="Welcome to Your Vue.js App")
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PaymentPage from './views'
+import StepperComponent from "./components/Stepper.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PaymentPage,
+    StepperComponent
   }
 }
 </script>
