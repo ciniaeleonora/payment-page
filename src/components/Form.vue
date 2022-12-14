@@ -1,11 +1,10 @@
 <template lang="pug">
   v-app.form-detail
     h4 CARD DETAILS
-    div(style="border-bottom:3px dashed #B2B2B2")
+    div.mb-3(style="border-bottom:3px dashed #B2B2B2")
 
     div.form-detail__form
       v-text-field.form-detail__input(
-        style="height: 50px"
         label="Card Number*"
         v-model="document.cardNumbers"
         :rules="[...fieldRequiredRule, ...cardNumberRules]"
@@ -40,7 +39,7 @@
       )
 
     h4(style="#0078AA") BILLING INFORMATION
-    div(style="border-bottom:3px dashed #B2B2B2")
+    div.mb-3(style="border-bottom:3px dashed #B2B2B2")
 
     div.form-detail__form
       v-text-field.form-detail__input(
@@ -88,7 +87,7 @@
       )
 
 
-    div(style="border-bottom:3px dashed #B2B2B2")
+    div.mb-3(style="border-bottom:3px dashed #B2B2B2")
     div.form-detail__form
       .form-detail__form-checkbox
         .form-detail__form-checkbox-redeem
@@ -148,6 +147,7 @@
         align-end 
         width="156px"
         color="#0D4C92"
+        :disabled="disable"
         @click="onPayment"
       ) Pay Now
 
@@ -199,6 +199,7 @@ export default {
         val => !!val || "This field is required"
       ]
     },
+
     cardNumberRules() {
       return [
         val => /^[0-9]+$/.test(val) || "Card number is invalid",
@@ -233,6 +234,7 @@ export default {
   .form-detail
     margin-bottom: 100px
     &__form
+      margin-bottom: 5px
       display: flex
       justify-content: space-evenly
 

@@ -31,7 +31,7 @@
           ) Payment
 
     span Complete Payment in
-      Countdown(color="#FF1E1E" end="December 10, 2022") 
+      Countdown(color="#FF1E1E" end="December 17, 2022") 
 </template>
 
 
